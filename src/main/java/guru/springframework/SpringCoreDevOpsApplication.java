@@ -10,5 +10,6 @@ public class SpringCoreDevOpsApplication {
 		SpringApplication.run(SpringCoreDevOpsApplication.class, args);
 
 		// whitespace change just to trigger jenkins build
+		// another whitespace change just to trigger jenkins build
 	}
 }
