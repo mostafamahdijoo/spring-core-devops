@@ -9,8 +9,6 @@ public class SpringCoreDevOpsApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpringCoreDevOpsApplication.class, args);
 
-		// whitespace change just to trigger jenkins build
-		// another whitespace change just to trigger jenkins build
-		// third whitespace change just to trigger jenkins build
+		// white space change to check new jenkins webhook url: generic-webhook-trigger/invoke
 	}
 }
