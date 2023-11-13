@@ -9,6 +9,6 @@ public class SpringCoreDevOpsApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpringCoreDevOpsApplication.class, args);
 
-		// whitespace change
+		// whitespace change 2
 	}
 }
