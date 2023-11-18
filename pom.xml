@@ -53,6 +53,12 @@
 			<scope>runtime</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.3.0</version>
+		</dependency>
+
 		<!-- MySQL Dep -->
 		<dependency>
 			<groupId>mysql</groupId>
@@ -97,12 +103,12 @@
 		<repository>
 			<id>central</id>
 			<name>845ec4b0ef82-releases</name>
-			<url>http://3.15.158.250:8081/artifactory/libs-release-local</url>
+			<url>http://3.131.153.180:8081/artifactory/libs-release-local</url>
 		</repository>
 		<snapshotRepository>
 			<id>snapshots</id>
 			<name>845ec4b0ef82-snapshots</name>
-			<url>http://3.15.158.250:8081/artifactory/libs-snapshot-local</url>
+			<url>http://3.131.153.180:8081/artifactory/libs-snapshot-local</url>
 		</snapshotRepository>
 	</distributionManagement>
 
