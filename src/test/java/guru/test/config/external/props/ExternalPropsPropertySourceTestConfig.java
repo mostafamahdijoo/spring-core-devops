@@ -38,6 +38,12 @@ public class ExternalPropsPropertySourceTestConfig {
 
     @Bean
     public FakeJmsBroker fakeJmsBroker(){
+        System.out.println("Creating fakeJmsBroker in " + getClass().getName());
+        System.out.println("guru.jms.server = " + jmsServer);
+        System.out.println("guru.jms.server = " + jmsPort);
+        System.out.println("guru.jms.user = " + jmsUser);
+        System.out.println("guru.jms.password = " + jmsPassword);
+
         FakeJmsBroker fakeJmsBroker = new FakeJmsBroker();
         fakeJmsBroker.setUrl(jmsServer);
         fakeJmsBroker.setPort(jmsPort);

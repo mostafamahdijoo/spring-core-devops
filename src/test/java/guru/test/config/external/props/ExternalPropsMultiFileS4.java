@@ -20,6 +20,12 @@ public class ExternalPropsMultiFileS4 {
 
     @Bean
     public FakeJmsBroker fakeJmsBrokerMulti() {
+        System.out.println("Creating fakeJmsBroker in " + getClass().getName());
+        System.out.println("guru.jms.server = " + env.getProperty("guru.jms.server"));
+        System.out.println("guru.jms.server = " + env.getRequiredProperty("guru.jms.port"));
+        System.out.println("guru.jms.user = " + env.getProperty("guru.jms.user"));
+        System.out.println("guru.jms.password = " + env.getProperty("guru.jms.password"));
+
         FakeJmsBroker fakeJmsBroker = new FakeJmsBroker();
         fakeJmsBroker.setUrl(env.getProperty("guru.jms.server"));
         fakeJmsBroker.setPort(env.getRequiredProperty("guru.jms.port", Integer.class));
