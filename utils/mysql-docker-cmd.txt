@@ -1,0 +1,43 @@
+1. install docker on centos or redhat (https://docs.docker.com/engine/install/centos/)
+sudo yum update
+sudo yum install -y yum-utils
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+2. install mysql on docker
+sudo docker run -d --name prod_mysql \
+-p 3306:3306 \
+-v /var/lib/mysql:/var/lib/mysql \
+-e MYSQL_ROOT_PASSWORD=tiger \
+mysql/mysql-server:latest
+
+* troubleshooting note:
+if you get this error:
+Another process with pid 57 is using unix socket file
+remove lock file from this path: /var/lib/mysql/mysql.sock.lock
+
+3. check running images
+sudo docker ps
+
+4. connect to mysql container
+sudo docker exec -it prod_mysql bash
+
+5. connect mySql
+mysql -p
+
+6. create database
+create database springguru;
+
+7. create user 'spring_guru_owner' identified by "GuruPassword";
+8. grant all privileges on springguru.* to 'spring_guru_owner'@'%';
+
+spring.datasource.url=jdbc:mysql://13.58.200.228:3306/springguru
+spring.datasource.username=spring_guru_owner
+spring.datasource.password=GuruPassword
+spring.jpa.hibernate.ddl-auto=update
+
+#Bash env
+export SPRING_DATASOURCE_URL=jdbc:mysql://13.58.200.228:3306/springguru
+export SPRING_DATASOURCE_USERNAME=spring_guru_owner
+export SPRING_DATASOURCE_PASSWORD="GuruPassword"
+env SPRING_JPA_HIBERNATE_DDL-AUTO=update
